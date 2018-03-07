@@ -176,7 +176,7 @@ func (cni *CniDriver) SyncNetworkConfig() error {
 
 func (cni *CniDriver) getDefaultNetwork() *cniNetwork {
 	cni.RLock()
-	defer cni.Unlock()
+	defer cni.RUnlock()
 	return cni.defaultNetwork
 }
 
