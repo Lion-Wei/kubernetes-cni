@@ -11,6 +11,7 @@ import (
 	cnipb "github.com/kubernetes-cni/pkg/api"
 	"golang.org/x/net/context"
 	"google.golang.org/grpc"
+	"time"
 )
 
 // Defines Non blocking GRPC server interfaces
@@ -68,6 +69,8 @@ func (s *nonBlockingGRPCServer) serve(endpoint string, cniserver cnipb.CNIServic
 		addr = "/" + addr
 		if err := os.Remove(addr); err != nil && !os.IsNotExist(err) {
 			glog.Infof("mark: Failed to remove %s, error: %s", addr, err.Error())
+			// for test\
+			time.Sleep(10 * time.Minute)
 		}
 	}
 
