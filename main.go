@@ -14,7 +14,7 @@ func init() {
 
 var (
 	//TODO default value need decide and maybe those args can be pass by environment instead of flag
-	endpoint   = flag.String("endpoint", "unix://tmp/cni.sock", "CNI endpoint")
+	endpoint   = flag.String("endpoint", "unix://tmp/lw/cni.sock", "CNI endpoint")
 	cniConfDir = flag.String("conf-dir", "/etc/cni/net.d", "the dir of the cni configfile")
 	cniBinDir  = flag.String("bin-dir", "/opt/cni/bin", "the dir of the cni plugin binaries")
 )
